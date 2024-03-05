@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ValidationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/* Routes validation */
+
+Route::get('/validation', [ValidationController::class, 'mostrar'])->name('validation.mostrar');
+Route::post('/validation', [ValidationController::class, 'recibir'])->name('validation.recibir');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,7 +34,3 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 require __DIR__.'/auth.php';
-
-Route::get('/validationQuiz', function() {
-    return view('validationForm');
-})->name('validationForm');
