@@ -11,15 +11,19 @@ class ValidationController extends Controller
 {
     public function mostrar(){
         $registros = Validation::pluck('user');
-        
+        $bool = false;
+
         foreach ($registros as $registro) {
-           
             if($registro == Auth::id()){
 
-                return view('model');
-            }else{
-                return view('validationForm');
+                $bool = true;
             }
+            
+        }
+        if($bool){
+            return view('validationRealized');
+        }else{
+            return view('validationForm');
         }
         
     }  
@@ -44,6 +48,6 @@ class ValidationController extends Controller
         $validacion->save();
 
          
-        return view('model');
+        return view('validationRealized');
     }  
 }
