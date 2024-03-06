@@ -23,10 +23,8 @@
 
             <div class="sm:fixed sm:top-0 sm:left- p-6 text-left z-10">
                 <a href="{{ url('/') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" >Inicio </a>
-                <a href="#informacion" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Información </a>
-                <a href="{{  route('login') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Validación </a>
-                <a href="{{  route('login') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
-                <a href="{{  route('login') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Universidad </a>
+                <a href="#acercadelproyecto" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
+                <a href="#acercadelproyecto" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Validación </a>
                 <a href="#contribuidores" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Contribuidores </a>
             </div>
 
@@ -56,7 +54,7 @@
                 {{-- PRIMERA VISTA --}}
                 <div class="mt-16">
                     <div id="informacion" class="">
-                        <div class="py-40 mx-auto max-w-2xl lg:text-center">
+                        <div class="pt-32 pb-20 mx-auto max-w-2xl lg:text-center">
                         
                             <h1 class="mt-2 text-8xl font-extrabold tracking-tight text-white sm:text-4xl">Aplicación Web para determinar el nivel de competencias en inglés</h1>
                             
@@ -66,7 +64,10 @@
                     </div>
                 </div>
                 {{--FIN PRIMERA VISTA --}}
-                <div class="mt-16">
+                <div id="acercadelproyecto" class="mt-32 pt-28">
+
+                </div>
+                <div class="mt-32">
                     <div id="informacion" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     
                         <a href="#" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
@@ -110,10 +111,10 @@
    
                     </div>
                 </div>
-                {{-- CARD DE INTEGRANTES DEL EQUIPO --}}
-                <div class="mt-32" id="contribuidores">
-                </div>
                 <!-- INICIO CARDS DE EQUIPO -->
+                <div class="mt-32 pt-24" id="contribuidores">
+                </div>
+               
                 <div class="w-full rounded-md dark:bg-gray-800/40 dark:bg-gradient-to-tl from-gray-700/50">
                     @include('layouts/contribuidoresCards')
                 </div>
