@@ -15,28 +15,11 @@ class ValidationController extends Controller
         $existeValidacion = Validation::where('user', Auth::id())->exists();
 
         if ($existeValidacion) {
-            
-            $validacionVista = Validation::all();
-            $idsValidacion = Validation::pluck('user');
-            
-            foreach ($idsValidacion as $userId) {
-                // Utiliza Eloquent para obtener el usuario por su ID
-                $user = User::find($userId);
-            
-                if ($user) {
-                    // Accede al nombre del usuario y agrégalo al array
-                    $nombresUsuarios[] = $user->name;
-                    $correoUsuarios[] = $user->email;
-                }
-            }
-            for ($i = 0; $i < count($validacionVista); $i++) {
-                $validacionVista[$i]["email"] = $correoUsuarios[$i];
-                $validacionVista[$i]["nombre"] = $nombresUsuarios[$i];
-            }
-          
-            
-            return view('validations.validationRealized', ['validations' => $validacionVista,]);
-        
+            $Lista = Validation::join('users','users.id', '=', 'validations.user' )
+            ->select("users.name", "users.email", "validations.*")
+            ->get();
+
+            return view('validationRealized', ['validations' => $Lista]);
         } else {
             return view('validations.validationForm');
         }
