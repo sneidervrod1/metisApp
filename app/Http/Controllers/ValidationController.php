@@ -13,8 +13,11 @@ class ValidationController extends Controller
         $existeValidacion = Validation::where('user', Auth::id())->exists();
 
         if ($existeValidacion) {
-            $validacionVista = Validation::all(); // Solo si la vista necesita mostrar todas las validaciones
-            return view('validationRealized', ['validations' => $validacionVista]);
+            $Lista = Validation::join('users','users.id', '=', 'validations.user' )
+            ->select("users.name", "users.email", "validations.*")
+                ->get();
+
+            return view('validationRealized', ['validations' => $Lista]);
         } else {
             return view('validationForm');
         }

@@ -16,10 +16,11 @@
                  <div  class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                             
                     @if (isset($validations) && count($validations) > 0)
-                    <table class="table-auto w-full bg-gray-800 text-white border border-2 border-gray-700">
+                    <table class="table-auto w-full bg-gray-800 text-white border border-5 border-gray-700">
                         <thead>
                             <tr>
-                                <th class="px-4 py-2 text-center">Usuario N°</th>
+                                <th class="px-4 py-2 text-center">Nombre</th>
+                                <th class="px-4 py-2 text-center">Correo</th>
                                 <th class="px-4 py-2 text-center">Percepción usabilidad</th>
                                 <th class="px-4 py-2 text-center">Modelo competencias de inglés</th>
                                 <th class="px-4 py-2 text-center">Percepción de utilidad</th>
@@ -30,7 +31,8 @@
                         <tbody>
                             @foreach ($validations as $validation)
                                 <tr class="border-b">
-                                    <td class="px-4 py-2 text-center">{{ $validation->user }}</td>
+                                    <td class="px-4 py-2 text-center">{{ $validation->name }}</td>
+                                    <td class="px-4 py-2 text-center">{{ $validation->email }}</td>
                                     <td class="px-4 py-2 text-center">{{ $validation->percepUsabilidad }}</td>
                                     <td class="px-4 py-2 text-center">{{ $validation->modeloCompIngles }}</td>
                                     <td class="px-4 py-2 text-center">{{ $validation->percepUtilidad }}</td>
