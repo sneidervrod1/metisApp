@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Validation;
+use App\Models\User;
+use PhpParser\Node\Stmt\Foreach_;
 
 class ValidationController extends Controller
 {
@@ -13,10 +15,30 @@ class ValidationController extends Controller
         $existeValidacion = Validation::where('user', Auth::id())->exists();
 
         if ($existeValidacion) {
-            $validacionVista = Validation::all(); // Solo si la vista necesita mostrar todas las validaciones
-            return view('validationRealized', ['validations' => $validacionVista]);
+            
+            $validacionVista = Validation::all();
+            $idsValidacion = Validation::pluck('user');
+            
+            foreach ($idsValidacion as $userId) {
+                // Utiliza Eloquent para obtener el usuario por su ID
+                $user = User::find($userId);
+            
+                if ($user) {
+                    // Accede al nombre del usuario y agrégalo al array
+                    $nombresUsuarios[] = $user->name;
+                    $correoUsuarios[] = $user->email;
+                }
+            }
+            for ($i = 0; $i < count($validacionVista); $i++) {
+                $validacionVista[$i]["email"] = $correoUsuarios[$i];
+                $validacionVista[$i]["nombre"] = $nombresUsuarios[$i];
+            }
+          
+            
+            return view('validations.validationRealized', ['validations' => $validacionVista,]);
+        
         } else {
-            return view('validationForm');
+            return view('validations.validationForm');
         }
     }
 
