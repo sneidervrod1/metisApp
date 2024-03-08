@@ -16,11 +16,9 @@
                  <div  class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                             
                     @if (isset($validations) && count($validations) > 0)
-<<<<<<< HEAD:resources/views/validations/validationRealized.blade.php
+
                     <table class="table-auto w-full bg-gray-800 text-white border-2 border-gray-700">
-=======
                     <table class="table-auto w-full bg-gray-800 text-white border border-5 border-gray-700">
->>>>>>> Shalom:resources/views/validationRealized.blade.php
                         <thead>
                             <tr>
                                 <th class="px-4 py-2 text-center">Nombre</th>
@@ -37,12 +35,8 @@
                             @foreach ($validations as $validation)
                             
                                 <tr class="border-b">
-<<<<<<< HEAD:resources/views/validations/validationRealized.blade.php
-                                    <td class="px-4 py-2 text-center">{{ $validation->user}}</td>
-=======
                                     <td class="px-4 py-2 text-center">{{ $validation->name }}</td>
                                     <td class="px-4 py-2 text-center">{{ $validation->email }}</td>
->>>>>>> Shalom:resources/views/validationRealized.blade.php
                                     <td class="px-4 py-2 text-center">{{ $validation->percepUsabilidad }}</td>
                                     <td class="px-4 py-2 text-center">{{ $validation->modeloCompIngles }}</td>
                                     <td class="px-4 py-2 text-center">{{ $validation->percepUtilidad }}</td>

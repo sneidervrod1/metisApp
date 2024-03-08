@@ -19,7 +19,7 @@ class ValidationController extends Controller
             ->select("users.name", "users.email", "validations.*")
             ->get();
 
-            return view('validationRealized', ['validations' => $Lista]);
+            return view('validations.validationRealized', ['validations' => $Lista]);
         } else {
             return view('validations.validationForm');
         }
