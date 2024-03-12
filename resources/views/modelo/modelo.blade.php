@@ -351,7 +351,13 @@
         </br>
                 
                 {{--Button--}}
-                
+                <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+                    <h2 class="text-5xl mb-3 text-white">Marco ALTE</h2>
+                    <a href="https://www.cambridgeenglish.org/images/28906-alte-can-do-document.pdf" target="_blank">
+                      <button class="bg-red-900 text-white hover:bg-red-400 font-bold py-2 px-4 mt-3 border-double border-4 border-red-500">Ver más</button>
+                    </a>
+                  </div>
+                  
                 {{--Button--}}
 
                 {{--extras --}}
