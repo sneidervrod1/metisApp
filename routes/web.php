@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ValidationController;
+use App\Http\Controllers\ModeloController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ Route::get('/', function () {
 
 Route::get('/validation', [ValidationController::class, 'mostrar'])->name('validation.mostrar');
 Route::post('/validation', [ValidationController::class, 'recibir'])->name('validation.recibir');
+
+//Prueba Shalom
+Route::get('/modelo', [ModeloController::class,'mostrarmodelo']);
 
 
 Route::get('/dashboard', function () {

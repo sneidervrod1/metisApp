@@ -12,6 +12,9 @@
                         
                     <p class="font-bold backdrop-saturate-60">  ENCUESTAS DE VALIDACIÓN REALIZADAS</p>
                     </br>
+                    <p class="font-fold backdrop-saturate-60">
+                        N° Encuestados : {{ $personasencuesta }}
+                    </p>
                     </div>
                  <div  class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                             
@@ -24,7 +27,7 @@
                                 <th class="px-4 py-2 text-center">Nombre</th>
                                 <th class="px-4 py-2 text-center">Correo</th>
                                 <th class="px-4 py-2 text-center">Percepción usabilidad</th>
-                                <th class="px-4 py-2 text-center">Modelo competencias de inglés</th>
+                                <th class="px-4 py-2 text-center">Percepción del modelo</th>
                                 <th class="px-4 py-2 text-center">Percepción de utilidad</th>
                                 <th class="px-4 py-2 text-center">Satisfacción general de la aplicación</th>
                                 <th class="px-4 py-2 text-center">Total Aceptación</th>

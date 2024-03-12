@@ -23,14 +23,14 @@
 
             <div class="sm:fixed sm:top-0 sm:left- p-6 text-left z-10">
                 <a href="{{ url('/') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" >Inicio </a>
-                <a href="   " class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
+                <a href="{{ url('/modelo') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
                 <a href="#acercadelproyecto" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Validación </a>
                 <a href="#contribuidores" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Contribuidores </a>
             </div>
 
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                        @auth
+                    @auth
                         <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __('Dashboard') }}</a>
                     @else
                     
@@ -70,7 +70,7 @@
                 <div class="mt-32">
                     <div id="informacion" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     
-                        <a href="#" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                        <a href="{{ url('/modelo') }}" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                             <div>
                                 <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-red-500">
@@ -81,7 +81,7 @@
                                 </div>
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Modelo</h2>
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"> Basado en el modelo ALTE del marco comun europeo (MCER), formulamos un modelo capaz de calificar las diferentes competencias necesarias para evaluar el conocimiento del idioma ingles.
+                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"> Basado en el modelo ALTE del marco comun europeo (MCER), formulamos un modelo capaz de calificar las diferentes competencias necesarias para evaluar el conocimiento del idioma inglés.
 
                                 </p>
                             </div>

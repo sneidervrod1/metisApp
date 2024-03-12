@@ -12,6 +12,7 @@ class ValidationController extends Controller
 {
     public function mostrar()
     {
+        
         $existeValidacion = Validation::where('user', Auth::id())->exists();
 
         if ($existeValidacion) {
@@ -19,7 +20,12 @@ class ValidationController extends Controller
             ->select("users.name", "users.email", "validations.*")
             ->get();
 
-            return view('validations.validationRealized', ['validations' => $Lista]);
+            $personasencuesta = $Lista->count(); // Count validations from $Lista
+
+            return view('validations.validationRealized', [
+                'validations' => $Lista,
+                'personasencuesta' => $personasencuesta
+            ]);
         } else {
             return view('validations.validationForm');
         }
