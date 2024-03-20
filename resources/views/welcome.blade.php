@@ -23,7 +23,7 @@
 
             <div class="sm:fixed sm:top-0 sm:left- p-6 text-left z-10">
                 <a href="{{ url('/') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" >Inicio </a>
-                <a href="{{ url('/modelo') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
+                <a href="{{ route('encuesta.index') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
                 <a href="#acercadelproyecto" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Validación </a>
                 <a href="#contribuidores" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Contribuidores </a>
             </div>
@@ -45,7 +45,7 @@
             {{-- BODY --}}
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 {{-- LOGO --}}
-                <div class="w-16">
+                <div class="w-16 hidden sm:block">
                     <a  target="_blank" href="http://www1.udistrital.edu.co:8080/web/unidad-de-investigaciones-de-la-facultad-tecnologica/metis">
                         <img src="{{ asset('img/metisLogo.ico') }}" alt="">    
                     </a>
@@ -56,9 +56,9 @@
                     <div id="informacion" class="">
                         <div class="pt-32 pb-20 mx-auto max-w-2xl lg:text-center">
                         
-                            <h1 class="mt-2 text-8xl font-extrabold tracking-tight text-white sm:text-4xl">Aplicación Web para determinar el nivel de competencias en inglés</h1>
+                            <h1 class="text-lg md:text-xl mt-6 lg:text-2xl xl:text-3xl leading-8 font-extrabold tracking-tight text-white">Aplicación Web para determinar el nivel de competencias en inglés</h1>
                             
-                            <p class="mt-6 text-lg leading-8 text-gray-400">"Basados en un modelo de evaluación que califica tu nivel de inglés actual. Este sistema analiza 
+                            <p class="text-lg md:text-xs mt-6 lg:text-x1 xl:text-2xl leading-8 text-gray-400">"Basados en un modelo de evaluación que califica tu nivel de inglés actual. Este sistema analiza 
                                 habilidades clave, como comprensión auditiva, lectura y escritura."</p>
                           </div>  
                     </div>
@@ -120,22 +120,7 @@
                 </div>
                 <!-- FIN CARDS DE EQUIPO -->
                 {{--extras --}}
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+               
             </div>
         </div>
     </body>

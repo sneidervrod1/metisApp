@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ValidationController;
-use App\Http\Controllers\ModeloController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EncuestaController;
+use App\Http\Controllers\ModeloController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +24,14 @@ Route::get('/', function () {
 Route::get('/validation', [ValidationController::class, 'mostrar'])->name('validation.mostrar');
 Route::post('/validation', [ValidationController::class, 'recibir'])->name('validation.recibir');
 
-//Prueba Shalom
-Route::get('/modelo', [ModeloController::class,'mostrarmodelo']);
 
+/* Routes encuestas */
+
+Route::get('/encuesta/nivel', [EncuestaController::class, 'index'])->name('encuesta.index');
+Route::post('/encuesta/nivel', [EncuestaController::class, 'pesosCategorias'])->name('encuesta.id');
+Route::post('/encuesta', [EncuestaController::class, 'pesosCategoriasActualizar'])->name('encuesta.pesos');
+
+/* Routes AUTH */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
