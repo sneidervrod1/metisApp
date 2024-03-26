@@ -5,35 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Level;
-use App\Models\Category;
+
 class EncuestaController extends Controller
 {
-    public function index():View
+    public function index(): View
     {
-        $datos = Level::all();
-        return view('encuestas.datos', compact('datos'));
+        $niveles = Level::all();
+        return view('encuestas.niveles.datos', compact('niveles'));
     }
-    public function pesosCategorias(Request $request){
-        $id = $request->id;
-        $dato = Level::find($id);
-        return view('encuestas.formPesos', compact('dato'));
-    }
-    public function pesosCategoriasActualizar(Request $request){
-        $a = array();
 
-        for ($i=0; $i < count($request->all()) ; $i++) { 
-            $a[$i] = intval($request->$i);
+    public function peso(Level $nivel)
+    {
+
+        return view('encuestas.niveles.formPesos', compact('nivel'));
+    }
+    public function actualizar(Request $request, Level $nivel)
+    {
+
+        $datosFormulario = $request->except('_token', '_method');
+        $suma = array_sum($datosFormulario);
+
+      
+        
+        if ($suma == 100) {
+            // Obtener los datos existentes de la base de datos
             
-        }
-        array_shift($a);
-        $total = array_sum($a);
-        if ($total == 100) {
-            return redirect()->back()->with(['status'=>'Datos actualizados!','status_type'=>'success']);
-        }else{
-            return redirect()->back()->with(['status'=>'La suma de los pesos no es 100','status_type'=>'failed']);
 
+            foreach ($datosFormulario as $key => $dato) {
+              
+                $nivel->categories()->updateExistingPivot($key, [
+                     'weight_category' => $dato,    
+                ]);
+            }
+            return redirect()->route('encuesta.index')->with('success', 'Los datos fueron actualizados correctamente.');
+
+        } else {
+            // Si la suma no es 100, redirigir de vuelta al formulario
+            return redirect()->back()->withInput()->with('error', 'La suma de los valores debe ser 100. Por favor, inténtalo de nuevo.');
         }
-       
     }
-    
 }
