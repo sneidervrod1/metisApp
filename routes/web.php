@@ -27,10 +27,9 @@ Route::post('/validation', [ValidationController::class, 'recibir'])->name('vali
 
 /* Routes encuestas */
 
-Route::get('/encuesta/nivel', [EncuestaController::class, 'index'])->name('encuesta.index');
-Route::post('/encuesta/nivel', [EncuestaController::class, 'pesosCategorias'])->name('encuesta.id');
-Route::post('/encuesta', [EncuestaController::class, 'pesosCategoriasActualizar'])->name('encuesta.pesos');
-
+Route::get('/encuesta', [EncuestaController::class, 'index'])->name('encuesta.index');
+Route::get('/encuesta/pesoNivel/{nivel}', [EncuestaController::class, 'peso'])->name('encuesta.pesoCategoria');
+Route::put('/encuesta/actualizar/{nivel}', [EncuestaController::class, 'actualizar'])->name('encuesta.actualizar');
 /* Routes AUTH */
 
 Route::get('/dashboard', function () {

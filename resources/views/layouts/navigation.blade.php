@@ -19,6 +19,11 @@
                     <x-nav-link :href="route('validation.mostrar')" :active="request()->routeIs('validation.mostrar')">
                         Validación
                     </x-nav-link>
+
+                    <x-nav-link :href="route('encuesta.index')" :active="request()->routeIs('encuesta.index')">
+                        Encuestas
+                    </x-nav-link>
+                  
                 </div>
             </div>
 

@@ -14,6 +14,6 @@ class Level extends Model
 
     public function categories(): BelongsToMany{
 
-        return $this->belongsToMany(Category::class)->withPivot('weight_category');
+        return $this->belongsToMany(Category::class)->withPivot('weight_category')->withTimestamps();
     }
 }
