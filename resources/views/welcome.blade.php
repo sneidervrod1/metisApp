@@ -23,9 +23,11 @@
 
             <div class="sm:fixed sm:top-0 sm:left- p-6 text-left z-10">
                 <a href="{{ url('/') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" >Inicio </a>
-                <a href=" " class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
+                <a href="" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Proyecto </a>
+                <a href="{{ route('modelo.mostrarmodelo') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Modelo </a>
                 <a href="#acercadelproyecto" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Validación </a>
                 <a href="#contribuidores" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Contribuidores </a>
+                <a href="" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Contacto </a>
             </div>
 
             @if (Route::has('login'))
@@ -124,4 +126,39 @@
             </div>
         </div>
     </body>
+    <footer class="bg-gray-800 py-4">
+        <div class="container flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <div class="flex flex-col items-start mr-12">
+                <h2 class="text-white font-semibold text-xl">Enlaces útiles</h2>
+                <ul class="mt-4">
+                  <li class="mb-2">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Manuales</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Video explicativo</a>
+                  </li>
+                </ul>
+        </div>
+        <div class="flex flex-col items-start">
+            <h2 class="text-white font-semibold text-xl">Contacto</h2>
+            <ul class="mt-4">
+              <li class="mb-2">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Formulario de contacto</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Correo electrónico</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Teléfono</a>
+              </li>
+            </ul>
+        </div>
+        <div class="mb-2 flex items-center">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.615 16.875A2.113 2.113 0 0119.73 19l1.825-3.575A2.114 2.114 0 0021.615 13V11a6.673 6.673 0 00-6.666-6.667C14.333 4.333 14 7.667 14 11v2zM12 19l-2.194 2.194A2.113 2.113 0 019.73 21l-3.575-1.825A2.114 2.114 0 007.615 19V11a6.673 6.673 0 006.666-6.667C11.667 4.333 12 7.667 12 11v8z"/>
+            
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.931712442674!2d-74.15754043640908!3d4.579699409395414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9aa04518525d:0x2154b1607a32846d!2sUniversidad+Distrital+Francisco+Jos%C3%A9+de+Caldas+Sede+Tecnol%C3%B3gica!5e0!3m2!1ses!2sco!4v1648409250611!5m2!1ses!2sco" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        </div>
+    </footer>
+      
 </html>

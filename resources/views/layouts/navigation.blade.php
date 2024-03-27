@@ -15,14 +15,26 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    
-                    <x-nav-link :href="route('validation.mostrar')" :active="request()->routeIs('validation.mostrar')">
-                        Validación
-                    </x-nav-link>
 
                     <x-nav-link :href="route('encuesta.index')" :active="request()->routeIs('encuesta.index')">
-                        Encuestas
+                        Encuesta
                     </x-nav-link>
+
+                    <x-nav-link :href>
+                        Evaluación
+                    </x-nav-link>
+                    
+                    <x-nav-link :href>
+                        Reportes
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('validation.mostrar')" :active="request()->routeIs('validation.mostrar')">
+                        Encuesta validación
+                    </x-nav-link>
+
+                    
+
+                    
                   
                 </div>
             </div>

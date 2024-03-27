@@ -11,8 +11,7 @@ use PhpParser\Node\Stmt\Foreach_;
 class ValidationController extends Controller
 {
     public function mostrar()
-    {
-        
+    {        
         $existeValidacion = Validation::where('user', Auth::id())->exists();
 
         if ($existeValidacion) {

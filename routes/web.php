@@ -5,6 +5,8 @@ use App\Http\Controllers\ValidationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncuestaController;
 use App\Http\Controllers\ModeloController;
+use App\Http\Controllers\PreguntasController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,19 +21,28 @@ use App\Http\Controllers\ModeloController;
 Route::get('/', function () {
     return view('welcome');
 });
-/* Routes validation */
 
+/* Routes validation */
 Route::get('/validation', [ValidationController::class, 'mostrar'])->name('validation.mostrar');
 Route::post('/validation', [ValidationController::class, 'recibir'])->name('validation.recibir');
 
 
 /* Routes encuestas */
-
 Route::get('/encuesta', [EncuestaController::class, 'index'])->name('encuesta.index');
 Route::get('/encuesta/pesoNivel/{nivel}', [EncuestaController::class, 'peso'])->name('encuesta.pesoCategoria');
 Route::put('/encuesta/actualizar/{nivel}', [EncuestaController::class, 'actualizar'])->name('encuesta.actualizar');
-/* Routes AUTH */
 
+
+/* Routes preguntas */
+Route::get('/questions', [PreguntasController::class, 'index'])->name('Preguntas.preguntas');
+Route::get('/enunciado', [PreguntasController::class, 'recibirDatosInstruccion'])->name('Preguntas.recibirDatos');
+
+
+/* Routes modelo */
+Route::get('/modelo', [ModeloController::class, 'mostrarmodelo'])->name('modelo.mostrarmodelo');
+
+
+/* Routes AUTH */
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
